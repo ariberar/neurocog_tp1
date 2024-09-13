@@ -38,7 +38,7 @@ response_key = {'space'}     # Tecla de respuesta
 
 ### Results Logging ###
 time_stamp = strftime('%d-%m-%Y_%H:%M:%S').replace(':','_') # Nombre del archivo
-output_file_path = '%s_imagenes_%s_%s_%s.csv'%(subid,ntrial,porc,porc_dist) #ubicación
+output_file_path = '%s_numeritos_%s_%s_%s.csv'%(subid,ntrial,porc,porc_dist) #ubicación
 output_file = open(output_file_path,'w+') # Suma por linea
 output_file.write('subid,ntrial,estim,correct,response_time,cumulative_response_time,fixation_onset,fixation_dur,stim_onset,stim_dur,response_onset,response_dur,id_distrac,dist_dur\n') #Información que guarda
 output_file.flush()
@@ -106,7 +106,7 @@ instructions_header = visual.TextStim(win, text='INSTRUCCIONES',
 
 
 #Main
-instructions_text1 = visual.TextStim(win, text='Presiona la barra espaciadora sólo si el número BLANCO es menor o igual a 5. Es posible que haya puntos ROJOS distractores.',
+instructions_text1 = visual.TextStim(win, text='Presiona la barra espaciadora sólo si el número BLANCO es menor o igual a 5. Es posible que haya distracciones numéricas ROJAS',
 										font = 'Arial',
 										height = fontsize,
 										color = 'white',
@@ -280,17 +280,6 @@ experiment_clock.reset()
 
 elapse_time = 0
 last_trial_dur = 0
-image1 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos1.png")
-image2 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos2.png")
-image3 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos3.png")
-image4 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos4.png")
-image5 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos5.png")
-image6 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos6.png")
-image7 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos7.png")
-image8 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos8.png")
-image9 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos9.png")
-image10 = visual.ImageStim(win, image="C:/Users/54115/Desktop/Doctorado/Neuro Cognitiva/puntitos10.png")
-
 for trial in range(ntrial):
     estimulo=stim_sequence[trial]
     distraccion_save = dist_sequence[trial]
@@ -312,26 +301,26 @@ for trial in range(ntrial):
     for dd in range(int(dist_dur)):
         if dd<int(dist_dur):
             if dist_sequence[trial]==1:
-                image1.draw()
+                dist_1.draw()
             elif dist_sequence[trial]==2:
-                image2.draw()
+                dist_2.draw()
             elif dist_sequence[trial]==3:
-                image3.draw()
+                dist_3.draw()
             elif dist_sequence[trial]==4:
-                image4.draw()
+                dist_4.draw()
             elif dist_sequence[trial]==5:
-                image5.draw()
+                dist_5.draw()
             elif dist_sequence[trial]==6:
-                image6.draw()
+                dist_6.draw()
                 cond_dist=0
             elif dist_sequence[trial]==7:
-                image7.draw()
+                dist_7.draw()
                 cond_dist=0
             elif dist_sequence[trial]==8: 
-                image8.draw()
+                dist_8.draw()
                 cond_dist=0
             elif dist_sequence[trial]==9:
-                image9.draw()
+                dist_9.draw()
                 cond_dist=0
             win.flip()
         else:
